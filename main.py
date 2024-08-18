@@ -16,7 +16,7 @@ classification_agent = Agent(name='Classifier', llm=classification_llm)
 
 # Define a custom function
 def custom_function(text):
-    return text.upper()
+    return text.lower()
 
 def custom_function_write(text):
     with open('custom_output.txt', 'w') as f:
@@ -38,7 +38,7 @@ custom_task_write = Task(name='Custom Function Task Write', task_id=5, agent=cus
 task_manager = TaskManager()
 task_manager.add_task(translation_task)
 task_manager.add_task(summarize_task)
-task_manager.add_task(classify_task)
+# task_manager.add_task(classify_task)
 task_manager.add_task(custom_task)
 task_manager.add_task(custom_task_write)
 
